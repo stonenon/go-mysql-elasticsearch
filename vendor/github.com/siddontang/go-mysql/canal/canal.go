@@ -245,6 +245,25 @@ func (c *Canal) checkBinlogRowFormat() error {
 	return nil
 }
 
+func (c *Canal) getMasterInfo() (name string, pos uint64, err error) {
+	res, err := c.Execute(`show master status;`)
+	if err != nil {
+		return "", 0, errors.Trace(err)
+	} else {
+		name, err = res.GetString(0, 0)
+		if err != nil {
+			return "", 0, errors.Trace(err)
+		}
+
+		pos, err = res.GetUint(0, 1)
+		if err != nil {
+			return "", 0, errors.Trace(err)
+		}
+	}
+
+	return name, pos, nil
+}
+
 func (c *Canal) prepareSyncer() error {
 	c.syncer = replication.NewBinlogSyncer(c.cfg.ServerID, c.cfg.Flavor)
 

@@ -11,7 +11,7 @@ import (
 
 func (c *Canal) startSyncBinlog() error {
 	pos := mysql.Position{c.master.Name, c.master.Position}
-
+	log.Infof("start c.master sync binlog at %s,%d", c.master.Name, c.master.Position)
 	log.Infof("start sync binlog at %v", pos)
 
 	s, err := c.syncer.StartSync(pos)

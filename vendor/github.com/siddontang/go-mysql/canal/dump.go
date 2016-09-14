@@ -103,9 +103,14 @@ func (c *Canal) tryDump() error {
 	}
 
 	h := &dumpParseHandler{c: c}
-
+	var err error
 	start := time.Now()
 	log.Info("try dump MySQL and parse")
+	h.name, h.pos, err = c.getMasterInfo()
+	if err != nil {
+		return errors.Trace(err)
+	}
+
 	if err := c.dumper.DumpAndParse(h); err != nil {
 		return errors.Trace(err)
 	}

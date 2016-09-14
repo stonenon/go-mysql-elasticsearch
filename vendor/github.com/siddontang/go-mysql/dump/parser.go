@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"io"
 	"regexp"
-	"strconv"
 
 	"github.com/juju/errors"
 	"github.com/siddontang/go-mysql/mysql"
@@ -38,7 +37,7 @@ func Parse(r io.Reader, h ParseHandler) error {
 	rb := bufio.NewReaderSize(r, 1024*16)
 
 	var db string
-	var binlogParsed bool
+	//var binlogParsed bool
 
 	for {
 		line, err := rb.ReadString('\n')
@@ -50,7 +49,7 @@ func Parse(r io.Reader, h ParseHandler) error {
 
 		line = line[0 : len(line)-1]
 
-		if !binlogParsed {
+		/*if !binlogParsed {
 			if m := binlogExp.FindAllStringSubmatch(line, -1); len(m) == 1 {
 				name := m[0][1]
 				pos, err := strconv.ParseUint(m[0][2], 10, 64)
@@ -64,7 +63,7 @@ func Parse(r io.Reader, h ParseHandler) error {
 
 				binlogParsed = true
 			}
-		}
+		}*/
 
 		if m := useExp.FindAllStringSubmatch(line, -1); len(m) == 1 {
 			db = m[0][1]

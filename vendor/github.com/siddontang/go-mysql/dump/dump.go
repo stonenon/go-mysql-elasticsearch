@@ -97,9 +97,9 @@ func (d *Dumper) Dump(w io.Writer) error {
 	args = append(args, fmt.Sprintf("--user=%s", d.User))
 	args = append(args, fmt.Sprintf("--password=%s", d.Password))
 
-	args = append(args, "--master-data")
+	/*args = append(args, "--master-data")
 	args = append(args, "--single-transaction")
-	args = append(args, "--skip-lock-tables")
+	args = append(args, "--skip-lock-tables")*/
 
 	// Disable uncessary data
 	args = append(args, "--compact")
