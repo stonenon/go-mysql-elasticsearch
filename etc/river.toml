@@ -30,83 +30,83 @@ schema = "projectkdb"
 # Only below tables will be synced into Elasticsearch.
 # "test_river_[0-9]{4}" is a wildcard table format, you can use it if you have many sub tables, like table_0000 - table_1023
 # I don't think it is necessary to sync all tables in a database.
-#tables = ["order_tbl", "ticket_tbl","arrangement_tbl","subClasses_tbl","activity_tbl","activity_en_tbl","activity_ch_tbl","subClasses_en_tbl","subClasses_ch_tbl","city_en_tbl","city_ch_tbl","user_tbl","userexternal_tbl","braintreelog_tbl","voucher_tbl"]
-tables = ["order_tbl"]
+tables = ["order_tbl", "ticket_tbl","arrangement_tbl","subClasses_tbl","activity_tbl","activity_en_tbl","activity_ch_tbl","subClasses_en_tbl","subClasses_ch_tbl","city_en_tbl","city_ch_tbl","user_tbl","userexternal_tbl","braintreelog_tbl","voucher_tbl"]
+#tables = ["order_tbl"]
 [[rule]]
 schema = "projectkdb"
 table = "order_tbl"
 index = "projectkdb"
 type = "order_tbl"
-#[[rule]]
-#schema = "projectkdb"
-#table = "subClasses_ch_tbl"
-#index = "projectkdb"
-#type = "subClasses_ch_tbl"
-#[[rule]]
-#schema = "projectkdb"
-#table = "city_en_tbl"
-#index = "projectkdb"
-#type = "city_en_tbl"
-#[[rule]]
-#schema = "projectkdb"
-#table = "city_ch_tbl"
-#index = "projectkdb"
-#type = "city_ch_tbl"
-#[[rule]]
-#schema = "projectkdb"
-#table = "user_tbl"
-#index = "projectkdb"
-#type = "user_tbl"
-#[[rule]]
-#schema = "projectkdb"
-#table = "userexternal_tbl"
-#index = "projectkdb"
-#type = "userexternal_tbl"
-#[[rule]]
-#schema = "projectkdb"
-#table = "braintreelog_tbl"
-#index = "projectkdb"
-#type = "braintreelog_tbl"
-#[[rule]]
-#schema = "projectkdb"
-#table = "voucher_tbl"
-#index = "projectkdb"
-#type = "voucher_tbl"
-#[[rule]]
-#schema = "projectkdb"
-#table = "ticket_tbl"
-#index = "projectkdb"
-#type = "ticket_tbl"
-#[[rule]]
-#schema = "projectkdb"
-#table = "arrangement_tbl"
-#index = "projectkdb"
-#type = "arrangement_tbl"
-#[[rule]]
-#schema = "projectkdb"
-#table = "subClasses_tbl"
-#index = "projectkdb"
-#type = "subClasses_tbl"
-#[[rule]]
-#schema = "projectkdb"
-#table = "activity_tbl"
-#index = "projectkdb"
-#type = "activity_tbl"
-#[[rule]]
-#schema = "projectkdb"
-#table = "activity_en_tbl"
-#index = "projectkdb"
-#type = "activity_en_tbl"
-#[[rule]]
-#schema = "projectkdb"
-#table = "activity_ch_tbl"
-#index = "projectkdb"
-#type = "activity_ch_tbl"
-#[[rule]]
-#schema = "projectkdb"
-#table = "subClasses_en_tbl"
-#index = "projectkdb"
-#type = "subClasses_en_tbl"
+[[rule]]
+schema = "projectkdb"
+table = "subClasses_ch_tbl"
+index = "projectkdb"
+type = "subClasses_ch_tbl"
+[[rule]]
+schema = "projectkdb"
+table = "city_en_tbl"
+index = "projectkdb"
+type = "city_en_tbl"
+[[rule]]
+schema = "projectkdb"
+table = "city_ch_tbl"
+index = "projectkdb"
+type = "city_ch_tbl"
+[[rule]]
+schema = "projectkdb"
+table = "user_tbl"
+index = "projectkdb"
+type = "user_tbl"
+[[rule]]
+schema = "projectkdb"
+table = "userexternal_tbl"
+index = "projectkdb"
+type = "userexternal_tbl"
+[[rule]]
+schema = "projectkdb"
+table = "braintreelog_tbl"
+index = "projectkdb"
+type = "braintreelog_tbl"
+[[rule]]
+schema = "projectkdb"
+table = "voucher_tbl"
+index = "projectkdb"
+type = "voucher_tbl"
+[[rule]]
+schema = "projectkdb"
+table = "ticket_tbl"
+index = "projectkdb"
+type = "ticket_tbl"
+[[rule]]
+schema = "projectkdb"
+table = "arrangement_tbl"
+index = "projectkdb"
+type = "arrangement_tbl"
+[[rule]]
+schema = "projectkdb"
+table = "subClasses_tbl"
+index = "projectkdb"
+type = "subClasses_tbl"
+[[rule]]
+schema = "projectkdb"
+table = "activity_tbl"
+index = "projectkdb"
+type = "activity_tbl"
+[[rule]]
+schema = "projectkdb"
+table = "activity_en_tbl"
+index = "projectkdb"
+type = "activity_en_tbl"
+[[rule]]
+schema = "projectkdb"
+table = "activity_ch_tbl"
+index = "projectkdb"
+type = "activity_ch_tbl"
+[[rule]]
+schema = "projectkdb"
+table = "subClasses_en_tbl"
+index = "projectkdb"
+type = "subClasses_en_tbl"
 
 # Below is for special rule mapping
 #[[rule]]

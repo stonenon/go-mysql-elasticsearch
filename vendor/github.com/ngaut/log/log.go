@@ -51,6 +51,7 @@ var _log *logger = New()
 func init() {
 	SetFlags(Ldate | Ltime | Lshortfile)
 	SetHighlighting(runtime.GOOS != "windows")
+	SetOutputByName("../log/my.log")
 }
 
 func Logger() *log.Logger {
